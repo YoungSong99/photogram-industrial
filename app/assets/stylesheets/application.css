@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.devise-links a {
-    text-decoration: none;
-}
