@@ -74,8 +74,10 @@ GEM
     ansispan (0.0.1)
     appdev_support (0.2.1)
       tabulo
+    ast (2.4.2)
     awesome_print (1.9.2)
     base64 (0.1.1)
+    bcrypt (3.1.20)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -109,6 +111,12 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     debug_inspector (1.1.0)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     diffy (3.4.2)
     domain_name (0.5.20190701)
@@ -166,6 +174,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.7.2)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -178,6 +187,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    language_server-protocol (3.17.0.3)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
@@ -215,6 +225,11 @@ GEM
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
     oj (3.13.23)
+    orm_adapter (0.5.0)
+    parallel (1.25.1)
+    parser (3.3.3.0)
+      ast (~> 2.4.1)
+      racc
     pg (1.4.6)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -268,7 +283,8 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
-    rake (13.0.6)
+    rainbow (3.1.1)
+    rake (13.2.1)
     ransack (4.0.0)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
@@ -278,6 +294,9 @@ GEM
     regexp_parser (2.8.2)
     reline (0.3.9)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
@@ -303,8 +322,22 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rubocop (1.64.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.31.3)
+      parser (>= 3.3.1.0)
     ruby-graphviz (1.2.5)
       rexml
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     rufo (0.16.3)
@@ -357,6 +390,8 @@ GEM
       unf_ext
     unf_ext (0.0.9.1)
     unicode-display_width (2.4.2)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -387,6 +422,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
@@ -398,6 +434,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  devise
   dotenv-rails
   draft_matchers
   faker
@@ -415,6 +452,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-html-matchers
   rspec-rails (~> 6.0.0)
+  rubocop
   rufo
   selenium-webdriver
   simple_form
