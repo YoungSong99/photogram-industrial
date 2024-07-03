@@ -11,14 +11,18 @@
     <%= javascript_importmap_tags %>
 
   </head>
-
   <%= render 'shared/nav' %>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="container">
+      <% if notice.present? %>
+        <%= render "shared/flash", message: notice, css_class: "success" %>
+      <% end %>
+
+      <% if alert.present? %>
+        <%= render "shared/flash", message: alert, css_class: "danger" %>
+      <% end %>
+
       <%= yield %>
     </div>
-
   </body>
 </html>
