@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="/">Photogram</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -10,7 +10,7 @@
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
             <a class="nav-link" href="/<%= current_user.username %>/feed">
-              <i class="fas fa-users fa-fw"></i></i>
+              <i class="fas fa-users fa-fw"></i>
               Feed
             </a>
           </li>
@@ -26,23 +26,26 @@
           <li class="nav-item">
             <a class="nav-link" href="/photos/new">
               <i class="fas fa-plus-circle"></i>
-
               Add post
-            </a>          </li>
+            </a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="/<%= current_user.username %>">
+            <a class="nav-link" href="/photos/new">
               <i class="fas fa-home fa-fw"></i>
-
               Your profile
-            </a>          </li>
+            </a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <%= current_user.username %>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/users/edit">Edit profile</a>
-              <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">Sign out</a>
-            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/users/edit">Edit profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">Sign out</a>
+              </li>
+            </ul>
           </li>
         </ul>
       <% else %>
