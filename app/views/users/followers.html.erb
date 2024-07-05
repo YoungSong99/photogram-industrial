@@ -1,2 +1,2 @@
 <%= render "shared/profile_nav", user: @user %>
-<%= render "user_list", user: @user %>
+<%= render "user_list", title: "#{@user.username}'s followers", users: @user.followers %>
