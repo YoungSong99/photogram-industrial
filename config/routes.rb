@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :likes
   resources :photos
 
-  get ":username/liked" => "photos#liked", as: :liked_photo
-  get ":username/feed" => "photos#feed", as: :feed_photo
+  get ":username/liked" => "users#liked", as: :liked_photo
+  get ":username/feed" => "users#feed", as: :feed_photo
   get ":username/followers" => "users#followers", as: :followers
   get ":username/following" => "users#following", as: :following
 
