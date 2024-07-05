@@ -1,0 +1,15 @@
+<div class="row mb-4">
+  <div class="col-md-6 offset-md-3">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b><%= user.username %>'s followers</b>
+        <span class="badge text-bg-primary rounded-pill"><%= user.followers.count %></span>
+      </li>
+      <% user.followers.each do |follower| %>
+        <li class="list-group-item">
+          <%= link_to follower.username, user_path(follower.username), style: "text-decoration: none;" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

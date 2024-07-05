@@ -13,10 +13,10 @@
         <%= link_to "Liked photos", liked_photo_path(user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Feed</a>
+        <%= link_to "Feed", feed_photo_path(user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Followers</a>
+        <%= link_to "Followers", followers_path(user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Following</a>
