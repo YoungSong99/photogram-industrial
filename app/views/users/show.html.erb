@@ -1,1 +1,20 @@
-<%= @user.username %>
+<h1><%= @user.username %></h1>
+<h2>Own photos</h2>
+
+<% @user.own_photos.each do |photo| %>
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <%= image_tag photo.image, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= photo.owner.username %></h5>
+          <p class="card-text"><%= photo.caption %></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
