@@ -1,0 +1,5 @@
+<%= render "shared/profile_nav", user: @user %>
+
+<% @user.feed.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
+<% end %>
